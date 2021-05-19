@@ -56,6 +56,9 @@
   animation: fadeInFromNone 3s ease-out;
 }
 
+.Preview {
+  width: min(100%, 836px);
+}
 @keyframes fadeInFromNone {
   0% {
     display: none;
@@ -76,5 +79,10 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+
+  .footer img {
+    margin-left: 0.5rem;
+    height: 1.5rem;
   }
 }

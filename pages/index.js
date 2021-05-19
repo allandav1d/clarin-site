@@ -5,12 +5,12 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Clarin</title>
+        <title>clarin ∩</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <img src="/img/ClarinPreview.png" alt="Clarin Preview" />
+        <img className={styles.Preview} src="/img/ClarinPreview.png" alt="Clarin Preview" />
 
         <h3>COMING SOON</h3>
 
