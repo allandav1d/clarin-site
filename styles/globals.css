@@ -1,11 +1,20 @@
+@import url("http://fonts.cdnfonts.com/css/monument-extended");
+
 @font-face {
-  font-family: "MonumentExtended";
-  src: url("/Font/MonumentExtended-Regular.otf") format("opentype");
+  font-family: "EditorialNew";
+  src: url("/Font/EditorialNew-Ultralight.otf") format("opentype")
+      font-weight-normal,
+    url("/Font/EditorialNew-UltralightItalic.otf") format("opentype")
+      font-weight-normal font-italic;
 }
 
 :root {
-  --primary-color: #8b7f7f;
-  --primary-color-light: #e2dbdb;
+  --primary-color: #d57591;
+  --primary-color-light: #827377;
+  --background-color: #020102;
+}
+html {
+  background-color: var(--background-color);
 }
 html,
 body {
@@ -13,7 +22,6 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: var(--primary-color-light);
 }
 
 a {
@@ -34,13 +42,244 @@ h5 {
 }
 
 body::-webkit-scrollbar {
-  width: 0.7em;
+  width: 0.4em;
 }
 
 body::-webkit-scrollbar-track {
-  background-color: var(--primary-color-light);
+  background-color: var(--background-color);
 }
 
 body::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
+}
+
+/* Layout Home */
+
+.bgHero {
+  position: absolute;
+  z-index: -9;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: -9;
+}
+
+.container {
+  display: grid;
+  padding: 2rem;
+  grid-template-columns: 47.5% 5% 47.5%;
+  grid-template-rows: 5rem auto 40px;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Logo . Menu"
+    "LeftArea . RightArea"
+    "IconsSocial Spark IconsMusic";
+}
+
+.Logo {
+  grid-area: Logo;
+  padding: 1rem;
+  margin: 0;
+}
+
+.Menu {
+  grid-area: Menu;
+}
+
+.Menu p {
+  font-family: "EditorialNew";
+  color: var(--primary-color-light);
+  font-size: 1.3rem;
+  text-align: right;
+  padding: 1rem;
+  margin: 0;
+}
+
+.LeftArea {
+  grid-area: LeftArea;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5rem 1rem;
+}
+
+.RightArea {
+  grid-area: RightArea;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 5rem 1rem;
+}
+
+.RightArea p,
+.LeftArea p {
+  font-family: "Monument Extended";
+  font-size: 0.7rem;
+  color: var(--primary-color-light);
+  padding: 0;
+  margin: 0.1rem 0;
+}
+
+.RightArea p {
+  text-align: right;
+}
+
+H2 {
+  font-family: "EditorialNew";
+  font-weight: normal;
+}
+.CenterArea {
+  display: none;
+}
+.IconsSocial {
+  grid-area: IconsSocial;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.IconsSocial a,
+.IconsMusic a {
+  padding: 0.5rem;
+}
+.Spark {
+  position: relative;
+  grid-area: Spark;
+}
+.IconsMusic {
+  grid-area: IconsMusic;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media all and (-ms-high-contrast: none) {
+  .container {
+    display: -ms-grid;
+    -ms-grid-columns: 50% 50%;
+    -ms-grid-rows: 100px 1fr 100px;
+  }
+
+  .Logo {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .RightArea {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+
+  .LeftArea {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .Menu {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+
+  .IconsSocial {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+
+  .IconsMusic {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .container {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 100%;
+    grid-template-rows: 5rem 1rem auto 50px 50px 40px;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Logo"
+      "Menu"
+      "CenterArea"
+      "IconsMusic"
+      "IconsSocial"
+      "Spark";
+  }
+
+  .IconsSocial {
+    justify-content: center;
+  }
+  .RightArea,
+  .LeftArea {
+    display: none;
+  }
+  .CenterArea {
+    grid-area: CenterArea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 1rem;
+  }
+  h2 {
+    text-align: center;
+  }
+  .CenterArea p {
+    font-family: "Monument Extended";
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--primary-color-light);
+    padding: 0;
+    margin: 0.1rem 0;
+  }
+  .Logo {
+    grid-area: Logo;
+    display: flex;
+    justify-content: center;
+  }
+  .Menu {
+    display: flex;
+    justify-content: center;
+  }
+  .Spark {
+    position: relative;
+    grid-area: Spark;
+  }
+  .IconsMusic {
+    justify-content: center;
+  }
+
+  button {
+    font-family: "Monument Extended";
+    border: 1px solid var(--primary-color-light);
+    background: none;
+    color: var(--primary-color-light);
+    margin: 0.5rem;
+    padding: 0.3rem 1rem;
+  }
+
+  .active {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
 }
