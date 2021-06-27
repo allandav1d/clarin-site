@@ -40,7 +40,7 @@ export default function Home() {
   const [textLang, setTextLang] = useState(textPT);
   const [selectOption, setSelectOption] = useState(true);
 
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 800);
   function handleWindowSizeChange() {
     setWidth(window.innerWidth);
   }
