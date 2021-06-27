@@ -40,6 +40,19 @@ export default function Home() {
   const [textLang, setTextLang] = useState(textPT);
   const [selectOption, setSelectOption] = useState(true);
 
+  const [width, setWidth] = useState(0);
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+    }
+  }, []);
+
+  let isMobile = (width <= 768);
+
   useEffect(() => {
     if (selectOption === true) {
       setTextLang(textPT);
@@ -59,8 +72,8 @@ export default function Home() {
 
       <video
         className="bgHero"
-        poster='/video/Teaser-Frame-Horizontal.png'
-        src='/video/Teaser-Frame-Horizontal.mp4'
+        poster={`/video/Teaser-Frame-${isMobile ? 'Vertical' : 'Horizontal'}.png`}
+        src={`/video/Teaser-Frame-${isMobile ? 'Vertical' : 'Horizontal'}.mp4`}
         playsInline
         autoPlay
         muted
@@ -90,8 +103,8 @@ export default function Home() {
 
       <div className="CenterArea">
         <div className="btn">
-          <button className={selectOption && 'active'} onClick={() => setSelectOption(true)}>PT</button>
-          <button className={!selectOption && 'active'} onClick={() => setSelectOption(false)}>ENG</button>
+          <button className={selectOption ? 'active' : null} onClick={() => setSelectOption(true)}>PT</button>
+          <button className={!selectOption ? 'active' : null} onClick={() => setSelectOption(false)}>ENG</button>
         </div>
         <h2>HEAL AND DESTROY</h2>
         {textLang.map(string => {
@@ -100,13 +113,13 @@ export default function Home() {
       </div>
 
       <div className="IconsSocial">
-        <a href="#">
+        <a href="https://www.facebook.com/clarinmusic/" rel="noopener">
           <Image src="/img/icons/Social-Facebook.svg" width="32px" height="32px" />
         </a>
-        <a href="#">
+        <a href="https://www.instagram.com/clarinmusics/" rel="noopener">
           <Image src="/img/icons/Social-Instagram.svg" width="32px" height="32px" />
         </a>
-        <a href="#">
+        <a href="https://www.youtube.com/channel/UC4AbW2qjkv92GuCqRU-IN2g" rel="noopener">
           <Image src="/img/icons/Social-Youtube.svg" width="32px" height="32px" />
         </a>
       </div>
