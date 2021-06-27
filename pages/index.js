@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [width, setWidth] = useState(0);
+  const [video, setVideo] = useState();
 
   const textPT = [
     'Uma canção é como uma poça que perdura',
@@ -39,35 +41,43 @@ export default function Home() {
 
   const [textLang, setTextLang] = useState(textPT);
   const [selectOption, setSelectOption] = useState(true);
-  const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 800);
-
-  const [isMobile, setIsMobile] = useState(width <= 768);
-
 
   function handleWindowSizeChange() {
     setWidth(window.innerWidth);
   }
+
   useEffect(() => {
+    setWidth(window.innerWidth);
     window.addEventListener('resize', handleWindowSizeChange);
     return () => {
       window.removeEventListener('resize', handleWindowSizeChange);
     }
   }, []);
-  useEffect(() => {
-    setIsMobile(width <= 768);
 
-    console.log(isMobile)
-    console.log(typeof window !== 'undefined' ? window.innerWidth : 800)
+  useEffect(() => {
+    if (width <= 768) {
+      setVideo(<video
+        className="bgHero"
+        poster="/video/Teaser-Frame-Vertical.png"
+        src="/video/Teaser-Frame-Vertical.mp4"
+        playsInline
+        autoPlay
+        muted
+      />)
+    } else {
+      setVideo(< video
+        className="bgHero"
+        poster="/video/Teaser-Frame-Horizontal.png"
+        src="/video/Teaser-Frame-Horizontal.mp4"
+        playsInline
+        autoPlay
+        muted
+      />)
+    }
   }, [width]);
 
-
-
   useEffect(() => {
-    if (selectOption === true) {
-      setTextLang(textPT);
-    } else {
-      setTextLang(textENG);
-    }
+    selectOption ? setTextLang(textPT) : setTextLang(textENG);
   }, [selectOption])
 
 
@@ -78,26 +88,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {isMobile ?
-        <video
-          className="bgHero"
-          poster={`/video/Teaser-Frame-Vertical.png`}
-          src={`/video/Teaser-Frame-Vertical.mp4`}
-          playsInline
-          autoPlay
-          muted
-        />
-        :
-        <video
-          className="bgHero"
-          poster={`/video/Teaser-Frame-Horizontal.png`}
-          src={`/video/Teaser-Frame-Horizontal.mp4`}
-          playsInline
-          autoPlay
-          muted
-        />
-      }
-
+      {video}
 
       <div className="Logo">
         <Image
