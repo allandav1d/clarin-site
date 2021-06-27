@@ -39,8 +39,11 @@ export default function Home() {
 
   const [textLang, setTextLang] = useState(textPT);
   const [selectOption, setSelectOption] = useState(true);
-
   const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 800);
+
+  const [isMobile, setIsMobile] = useState(width <= 768);
+
+
   function handleWindowSizeChange() {
     setWidth(window.innerWidth);
   }
@@ -50,8 +53,14 @@ export default function Home() {
       window.removeEventListener('resize', handleWindowSizeChange);
     }
   }, []);
+  useEffect(() => {
+    setIsMobile(width <= 768);
 
-  let isMobile = (width <= 768);
+    console.log(isMobile)
+    console.log(typeof window !== 'undefined' ? window.innerWidth : 800)
+  }, [width]);
+
+
 
   useEffect(() => {
     if (selectOption === true) {
@@ -59,7 +68,6 @@ export default function Home() {
     } else {
       setTextLang(textENG);
     }
-
   }, [selectOption])
 
 
@@ -70,14 +78,26 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <video
-        className="bgHero"
-        poster={`/video/Teaser-Frame-${isMobile ? 'Vertical' : 'Horizontal'}.png`}
-        src={`/video/Teaser-Frame-${isMobile ? 'Vertical' : 'Horizontal'}.mp4`}
-        playsInline
-        autoPlay
-        muted
-      />
+      {isMobile ?
+        <video
+          className="bgHero"
+          poster={`/video/Teaser-Frame-Vertical.png`}
+          src={`/video/Teaser-Frame-Vertical.mp4`}
+          playsInline
+          autoPlay
+          muted
+        />
+        :
+        <video
+          className="bgHero"
+          poster={`/video/Teaser-Frame-Horizontal.png`}
+          src={`/video/Teaser-Frame-Horizontal.mp4`}
+          playsInline
+          autoPlay
+          muted
+        />
+      }
+
 
       <div className="Logo">
         <Image
