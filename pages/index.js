@@ -150,13 +150,13 @@ export default function Home() {
         <a href="#">
           <Image src="/img/icons/Amazon.svg" width="32px" height="32px" />
         </a>
-        <a href="#">
+        <a href="https://www.deezer.com/en/artist/4886029" target="_blank">
           <Image src="/img/icons/Deezer.svg" width="32px" height="32px" />
         </a>
         <a href="#">
           <Image src="/img/icons/SoundCloud.svg" width="32px" height="32px" />
         </a>
-        <a href="#">
+        <a href="https://tidal.com/browse/artist/11722672" target="_blank">
           <Image src="/img/icons/Tidal.svg" width="32px" height="32px" />
         </a>
       </div>
