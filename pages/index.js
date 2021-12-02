@@ -138,7 +138,7 @@ export default function Home() {
         <Image src="/img/Spark.svg" layout="fill" />
       </div>
       <div className="IconsMusic">
-        <a href="https://open.spotify.com/artist/2OG6aLcBTHkfh0IazvlHSG?si=q2FmNRtPSIGNBU_A-Ten1A&utm_source=copy-link">
+        <a href="https://open.spotify.com/artist/2OG6aLcBTHkfh0IazvlHSG?si=q2FmNRtPSIGNBU_A-Ten1A&utm_source=copy-link" target="_blank">
           <Image src="/img/icons/Spotify.svg" width="32px" height="32px" />
         </a>
         <a href="#">
