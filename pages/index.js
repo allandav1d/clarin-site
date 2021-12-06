@@ -141,20 +141,14 @@ export default function Home() {
         <a href="https://open.spotify.com/artist/2OG6aLcBTHkfh0IazvlHSG?si=q2FmNRtPSIGNBU_A-Ten1A&utm_source=copy-link" target="_blank">
           <Image src="/img/icons/Spotify.svg" width="32px" height="32px" />
         </a>
-        <a href="#">
+        <a href="https://music.apple.com/br/artist/clarin/1596619068" target="_blank">
           <Image src="/img/icons/AppleMusic.svg" width="32px" height="32px" />
-        </a>
-        <a href="#">
-          <Image src="/img/icons/YoutubeMusic.svg" width="32px" height="32px" />
         </a>
         <a href="#">
           <Image src="/img/icons/Amazon.svg" width="32px" height="32px" />
         </a>
         <a href="https://www.deezer.com/en/artist/4886029" target="_blank">
           <Image src="/img/icons/Deezer.svg" width="32px" height="32px" />
-        </a>
-        <a href="#">
-          <Image src="/img/icons/SoundCloud.svg" width="32px" height="32px" />
         </a>
         <a href="https://tidal.com/browse/artist/11722672" target="_blank">
           <Image src="/img/icons/Tidal.svg" width="32px" height="32px" />
