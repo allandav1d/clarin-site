@@ -124,10 +124,10 @@ export default function Home() {
       </div>
 
       <div className="IconsSocial">
-        <a href="https://www.facebook.com/clarinmusic/" rel="noopener"  target="_blank">
+        <a href="https://www.facebook.com/clarinmusics/" rel="noopener"  target="_blank">
           <Image src="/img/icons/Social-Facebook.svg" width="32px" height="32px" />
         </a>
-        <a href="https://www.instagram.com/clarinmusic/" rel="noopener"  target="_blank">
+        <a href="https://www.instagram.com/clarinmusics/" rel="noopener"  target="_blank">
           <Image src="/img/icons/Social-Instagram.svg" width="32px" height="32px" />
         </a>
         <a href="https://www.youtube.com/channel/UC4AbW2qjkv92GuCqRU-IN2g" rel="noopener"  target="_blank">
