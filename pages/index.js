@@ -124,13 +124,13 @@ export default function Home() {
       </div>
 
       <div className="IconsSocial">
-        <a href="https://www.facebook.com/clarinmusic/" rel="noopener">
+        <a href="https://www.facebook.com/clarinmusic/" rel="noopener"  target="_blank">
           <Image src="/img/icons/Social-Facebook.svg" width="32px" height="32px" />
         </a>
-        <a href="https://www.instagram.com/clarinmusics/" rel="noopener">
+        <a href="https://www.instagram.com/clarinmusic/" rel="noopener"  target="_blank">
           <Image src="/img/icons/Social-Instagram.svg" width="32px" height="32px" />
         </a>
-        <a href="https://www.youtube.com/channel/UC4AbW2qjkv92GuCqRU-IN2g" rel="noopener">
+        <a href="https://www.youtube.com/channel/UC4AbW2qjkv92GuCqRU-IN2g" rel="noopener"  target="_blank">
           <Image src="/img/icons/Social-Youtube.svg" width="32px" height="32px" />
         </a>
       </div>
@@ -138,19 +138,19 @@ export default function Home() {
         <Image src="/img/Spark.svg" layout="fill" />
       </div>
       <div className="IconsMusic">
-        <a href="https://open.spotify.com/artist/2OG6aLcBTHkfh0IazvlHSG?si=q2FmNRtPSIGNBU_A-Ten1A&utm_source=copy-link" target="_blank">
+        <a href="https://open.spotify.com/artist/2OG6aLcBTHkfh0IazvlHSG?si=q2FmNRtPSIGNBU_A-Ten1A&utm_source=copy-link" rel="noopener" target="_blank">
           <Image src="/img/icons/Spotify.svg" width="32px" height="32px" />
         </a>
-        <a href="https://music.apple.com/br/artist/clarin/1596619068" target="_blank">
+        <a href="https://music.apple.com/br/artist/clarin/1596619068" rel="noopener" target="_blank">
           <Image src="/img/icons/AppleMusic.svg" width="32px" height="32px" />
         </a>
         <a href="#">
-          <Image src="/img/icons/Amazon.svg" width="32px" height="32px" />
+          <Image src="/img/icons/Amazon.svg" width="32px" rel="noopener" height="32px" />
         </a>
-        <a href="https://www.deezer.com/en/artist/4886029" target="_blank">
+        <a href="https://www.deezer.com/en/artist/4886029" rel="noopener" target="_blank">
           <Image src="/img/icons/Deezer.svg" width="32px" height="32px" />
         </a>
-        <a href="https://tidal.com/browse/artist/11722672" target="_blank">
+        <a href="https://tidal.com/browse/artist/11722672" rel="noopener" target="_blank">
           <Image src="/img/icons/Tidal.svg" width="32px" height="32px" />
         </a>
       </div>
